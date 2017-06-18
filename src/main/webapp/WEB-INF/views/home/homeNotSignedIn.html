@@ -18,17 +18,19 @@
             Get started quickly by signing up.
         </p>
         <p>
-            <select th:field="*{homeForm.listeRome}">
-                <option th:each="rome : ${homeForm.listeRome}"
-                        th:value="${rome.code}"
-                        th:text="${rome.code + ' - ' + rome.libelle}">Wireframe
-                </option>
-            </select>
-        </p>
-        <p>
             <a class="btn btn-success btn-lg" id="signup">Sign up</a>
         </p>
     </div>
+    <p>
+        <div class="dropdown">
+        <select th:field="*{homeForm.listeRome}" class="form-control">
+            <option th:each="rome : ${homeForm.listeRome}"
+                    th:value="${rome.code}"
+                    th:text="${rome.code + ' - ' + rome.libelle}">Wireframe
+            </option>
+        </select>
+</div>
+    </p>
     <div th:replace="fragments/layout :: footer">&copy; 2016 The Static Templates</div>
 </div>
 <script th:inline="javascript" type="text/javascript">
